@@ -24,10 +24,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                        &kp Q  &kp W  &kp E     &kp R  &kp T                 &kp C_MUTE  &kp C_PP  &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&mt LA(LC(LG(LSHIFT))) ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G                 &kp LALT    &kp RALT  &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT                      &kp Z  &kp X  &kp C     &kp V  &kp B                                       &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                                             &kp LGUI  &mo 1  &mt LEFT_SHIFT SPACE                        &kp RET  &mo 2  &kp RALT
+&kp TAB                            &kp Q             &kp W           &kp E               &kp R                   &kp T             &kp C_MUTE       &kp C_PP                 &kp Y                &kp U                      &kp I              &kp O            &kp P               &kp BSPC
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &mt LEFT_SHIFT A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_GUI F          &kp G             &mt LC(V) LC(C)  &mt LS(LC(V)) LS(LC(S))  &kp H                &mt RIGHT_CONTROL J        &mt RIGHT_SHIFT K  &mt RIGHT_ALT L  &mt RIGHT_GUI SEMI  &kp SQT
+&kp LSHFT                          &kp Z             &kp X           &kp C               &kp V                   &kp B                                                       &kp N                &kp M                      &kp COMMA          &kp DOT          &kp FSLH            &mo 4
+                                                                     &lt 1 SPACE         &mt LEFT_CONTROL SPACE  &mt LEFT_ALT TAB                                            &mt RIGHT_GUI ENTER  &mt RIGHT_SHIFT BACKSPACE  &lt 2 DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -43,15 +43,16 @@
             //                    | GUI |     | SPC  |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4  &kp N5     &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp LCTRL  &trans  &trans  &trans    &trans  &trans     &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &trans
-&kp LSHFT  &trans  &trans  &trans    &trans  &trans                           &trans    &trans    &trans     &trans     &trans  &trans
-                           &kp LGUI  &trans  &kp SPACE                        &kp LGUI  &mo 3     &kp SPACE
+&kp TAB    &kp N1             &kp N2           &kp N3               &kp N4           &kp N5     &kp LCTRL  &kp RCTRL  &kp N6    &kp N7    &kp N8     &kp N9     &kp N0  &kp BSPC
+&kp LCTRL  &mt LEFT_SHIFT F1  &mt LEFT_ALT F2  &mt LEFT_CONTROL F3  &mt LEFT_GUI F4  &kp F5     &kp LALT   &kp RALT   &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans  &kp F11
+&kp LSHFT  &kp F6             &kp F7           &kp F8               &kp F9           &kp F10                          &trans    &trans    &trans     &trans     &trans  &kp F12
+                                               &kp LGUI             &trans           &kp SPACE                        &kp LGUI  &mo 3     &kp SPACE
             >;
         };
 
         raise_layer {
-            display-name = "SYMBOL";
+            dis
+            // -----play-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  | LCTRL | RCTRL |  ^  |  &  |  *  |  (  |  )  | BSPC |
@@ -60,10 +61,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans     &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans                           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE                        &kp RET    &trans     &kp RALT
+&kp TAB    &kp EXCL        &kp AT        &kp HASH          &kp DLLR      &kp PRCNT  &kp LCTRL  &kp RCTRL  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_GUI  &trans     &kp LALT   &kp RALT   &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
+&kp LSHFT  &trans          &trans        &trans            &trans        &trans                           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+                                         &kp LGUI          &trans        &kp SPACE                        &kp RET    &trans     &kp RALT
             >;
         };
 
@@ -84,13 +85,13 @@
             >;
         };
 
-        extra_layer_2 {
+        mouselayer {
             display-name = "EXTRA 2";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
+&trans  &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &trans  &trans     &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans     &trans  &trans  &trans     &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans          &trans           &trans  &trans                     &trans     &trans  &trans  &trans  &trans  &trans
+                                        &trans           &trans  &mkp LCLK                  &mkp RCLK  &trans  &trans
             >;
         };
 
