@@ -47,3 +47,6 @@ CONFIG_BT_GATT_ENFORCE_SUBSCRIPTION=n
 
 # Enable pointing
 CONFIG_ZMK_POINTING=y
+
+# Nuclear option - clear all settings on startup (temporary)
+CONFIG_ZMK_SETTINGS_RESET_ON_START=y
