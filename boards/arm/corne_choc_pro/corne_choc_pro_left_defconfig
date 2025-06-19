@@ -52,4 +52,4 @@ CONFIG_ZMK_STUDIO=y
 CONFIG_ZMK_POINTING=y
 
 # Nuclear option - clear all settings on startup (temporary)
-CONFIG_ZMK_SETTINGS_RESET_ON_START=y
+#CONFIG_ZMK_SETTINGS_RESET_ON_START=y
