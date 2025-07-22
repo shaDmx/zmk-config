@@ -9,6 +9,15 @@
 / {
     chosen { zmk,physical-layout = &default_layout; };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        
+        // Auto-activate SETTINGS layer when holding NUMBER + SYMBOL
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
+    };
 };
 
 / {
