@@ -80,7 +80,6 @@ CONFIG_BT_BUF_EVT_RX_SIZE=128
 
 # System optimization for keyboard responsiveness
 CONFIG_SYSTEM_WORKQUEUE_PRIORITY=-1
-CONFIG_BT_RX_PRIO=6
 CONFIG_BT_DRIVER_RX_HIGH_PRIO=6
 
 # Ultra-low latency controller optimizations (Agent 1 findings)
