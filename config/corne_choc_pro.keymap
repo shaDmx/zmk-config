@@ -62,44 +62,13 @@
             bindings = <&kp LS(LC(C))>, <&kp LS(LC(V))>;
         };
 
-        nav_h: nav_h_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_H_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT>, <&kp HOME>;
-        };
-
-        nav_j: nav_j_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_J_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp DOWN>, <&kp LC(END)>;
-        };
-
-        nav_k: nav_k_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_K_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp UP>, <&kp LC(HOME)>;
-        };
-
-        nav_l: nav_l_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NAV_L_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp END>;
-        };
 
         word_left: word_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "WORD_LEFT_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(LEFT)>, <&kp LA(LEFT)>;
+            bindings = <&kp LC(LEFT)>, <&kp HOME>;
         };
 
         word_down: word_down_tap_dance {
@@ -107,7 +76,7 @@
             label = "WORD_DOWN_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(DOWN)>, <&kp PG_DN>;
+            bindings = <&kp LC(DOWN)>, <&kp LC(END)>;
         };
 
         word_up: word_up_tap_dance {
@@ -115,7 +84,7 @@
             label = "WORD_UP_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(UP)>, <&kp PG_UP>;
+            bindings = <&kp LC(UP)>, <&kp LC(HOME)>;
         };
 
         word_right: word_right_tap_dance {
@@ -123,7 +92,7 @@
             label = "WORD_RIGHT_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp LC(RIGHT)>, <&kp LA(RIGHT)>;
+            bindings = <&kp LC(RIGHT)>, <&kp END>;
         };
 
         thumb_mt: thumb_mod_tap {
@@ -171,7 +140,7 @@
 
             bindings = <
 &kp TAB                            &kp N1            &kp N2            &kp N3              &kp N4                &kp N5                  &kp LCTRL    &kp RCTRL          &kp N6          &kp N7                    &kp N8        &kp N9     &kp N0  &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &nav_h          &nav_j                    &nav_k        &nav_l     &trans  &kp F11
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &kp LEFT        &kp DOWN                  &kp UP        &kp RIGHT  &trans  &kp F11
 &kp LSHFT                          &kp F6            &kp F7            &kp F8              &kp F9                &kp F10                                                 &word_left      &word_down                &word_up      &word_right &trans  &kp F12
                                                                        &trans              &mt LEFT_ALT TAB      &mt LEFT_CONTROL SPACE                                  &mt LGUI ENTER  &mt LEFT_SHIFT BACKSPACE  &lt 3 DELETE
             >;
