@@ -62,6 +62,70 @@
             bindings = <&kp LS(LC(C))>, <&kp LS(LC(V))>;
         };
 
+        nav_h: nav_h_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAV_H_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+        };
+
+        nav_j: nav_j_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAV_J_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp DOWN>, <&kp LC(END)>;
+        };
+
+        nav_k: nav_k_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAV_K_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp UP>, <&kp LC(HOME)>;
+        };
+
+        nav_l: nav_l_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAV_L_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp RIGHT>, <&kp END>;
+        };
+
+        word_left: word_left_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WORD_LEFT_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(LEFT)>, <&kp LA(LEFT)>;
+        };
+
+        word_down: word_down_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WORD_DOWN_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(DOWN)>, <&kp PG_DN>;
+        };
+
+        word_up: word_up_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WORD_UP_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(UP)>, <&kp PG_UP>;
+        };
+
+        word_right: word_right_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "WORD_RIGHT_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LC(RIGHT)>, <&kp LA(RIGHT)>;
+        };
+
         thumb_mt: thumb_mod_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_MOD_TAP";
@@ -107,8 +171,8 @@
 
             bindings = <
 &kp TAB                            &kp N1            &kp N2            &kp N3              &kp N4                &kp N5                  &kp LCTRL    &kp RCTRL          &kp N6          &kp N7                    &kp N8        &kp N9     &kp N0  &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &kp LEFT        &kp DOWN                  &kp UP        &kp RIGHT  &trans  &kp F11
-&kp LSHFT                          &kp F6            &kp F7            &kp F8              &kp F9                &kp F10                                                 &trans          &trans                    &trans        &trans     &trans  &kp F12
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &nav_h          &nav_j                    &nav_k        &nav_l     &trans  &kp F11
+&kp LSHFT                          &kp F6            &kp F7            &kp F8              &kp F9                &kp F10                                                 &word_left      &word_down                &word_up      &word_right &trans  &kp F12
                                                                        &trans              &mt LEFT_ALT TAB      &mt LEFT_CONTROL SPACE                                  &mt LGUI ENTER  &mt LEFT_SHIFT BACKSPACE  &lt 3 DELETE
             >;
         };
@@ -157,13 +221,20 @@
             >;
         };
 
-        extra_layer_3 {
-            display-name = "EXTRA 3";
+        vim_nav_layer {
+            display-name = "VIM NAV";
+            
+            // -----------------------------------------------------------------------------------------
+            // | FIND | UNDO | CUT  | COPY |PASTE | REDO|       |       |  gg  |Ctrl+U|Ctrl+D|  G   | INS | DEL  |
+            // | CTRL | GUI  | ALT  |SHIFT | CTRL | SEL |       |       |  b   |  h   |  j   |  k   |  l  |  w   |
+            // | SHFT |S+UNDO|S+CUT |S+COPY|S+PAST|     |               |  ^   |  {   |  }   |  $   |  0  |  e   |
+            //                      |      |      |     |               |      |      |      |
+            
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans                  &trans  &trans  &trans
+&kp LC(F)    &kp LC(Z)     &kp LC(X)     &kp LC(C)      &kp LC(V)        &kp LC(Y)           &trans  &trans  &kp LC(HOME)     &kp LC(U)        &kp LC(D)        &kp LC(END)      &kp INS    &kp DEL
+&kp LCTRL    &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT &kp LEFT_CONTROL &kp LS(LC(A))       &trans  &trans  &kp LC(LEFT)     &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT  &kp LC(RIGHT)
+&kp LSHFT    &kp LS(LC(Z)) &kp LS(LC(X)) &kp LS(LC(C))  &kp LS(LC(V))    &trans                              &kp HOME         &kp LC(UP)       &kp LC(DOWN)     &kp END          &kp LC(A)  &kp LA(RIGHT)
+                                         &trans         &trans           &trans                              &trans           &trans           &trans
             >;
         };
 
