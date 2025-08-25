@@ -61,4 +61,4 @@ CONFIG_ZMK_BLE_INIT_PRIORITY=41
 # Enable pointing
 CONFIG_ZMK_POINTING=y
 # Nuclear option - clear all settings on startup (uncomment if needed)
-CONFIG_ZMK_SETTINGS_RESET_ON_START=y
+# CONFIG_ZMK_SETTINGS_RESET_ON_START=y
