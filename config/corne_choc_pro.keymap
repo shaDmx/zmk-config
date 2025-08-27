@@ -156,10 +156,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&kp TAB                            &kp EXCL      &kp AT        &kp HASH        &kp DLLR          &kp PRCNT               &kp LCTRL  &kp RCTRL  &kp CARET           &kp AMPS                  &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &kp LBRC      &kp LBKT      &kp LPAR        &kp LT            &kp MINUS               &kp LALT   &kp RALT   &kp EQUAL           &kp GT                    &kp RPAR   &kp RBKT  &kp RBRC  &kp BSLH
-&kp LSHFT                          &kp GRAVE     &kp TILDE     &kp SQT         &kp DQT           &kp UNDER                                     &kp PLUS            &kp PIPE                  &kp SEMI   &kp COLON &kp FSLH  &kp QMARK
-                                                               &kp SPACE       &mt LEFT_ALT TAB  &mt LEFT_CONTROL SPACE                        &mt LEFT_GUI ENTER  &mt LEFT_SHIFT BACKSPACE  &trans
+&kp TAB                            &kp EXCL           &kp AT            &kp HASH           &kp DLLR               &kp PRCNT               &kp LCTRL  &kp RCTRL  &kp CARET           &kp AMPS                      &kp ASTRK           &kp LPAR         &kp RPAR            &kp BSPC
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI LBRC &hml LEFT_ALT LBKT &hml LEFT_SHIFT LPAR &hml LEFT_CONTROL LT   &kp MINUS               &kp LALT   &kp RALT   &kp EQUAL           &hmr RIGHT_CONTROL GT         &hmr RIGHT_SHIFT RPAR &hmr LEFT_ALT RBKT &hmr RIGHT_GUI RBRC &kp BSLH
+&kp LSHFT                          &kp GRAVE          &kp TILDE         &kp SQT            &kp DQT                &kp UNDER                                     &kp PLUS            &kp PIPE                      &kp SEMI            &kp COLON        &kp FSLH            &kp QMARK
+                                                                        &kp SPACE          &mt LEFT_ALT TAB       &mt LEFT_CONTROL SPACE                        &mt LEFT_GUI ENTER  &mt LEFT_SHIFT BACKSPACE      &trans
             >;
         };
 
