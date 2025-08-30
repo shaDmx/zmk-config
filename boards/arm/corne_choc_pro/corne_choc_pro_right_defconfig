@@ -54,6 +54,9 @@ CONFIG_ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY=y
 # Faster boot time
 CONFIG_ZMK_BLE_INIT_PRIORITY=41
 
+# Enable experimental features
+CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
+
 # Enable pointing
 CONFIG_ZMK_POINTING=y
 # Nuclear option - clear all settings on startup (uncomment if needed)

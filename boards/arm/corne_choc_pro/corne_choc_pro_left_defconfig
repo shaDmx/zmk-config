@@ -60,5 +60,8 @@ CONFIG_ZMK_STUDIO=y
 # Enable pointing
 CONFIG_ZMK_POINTING=y
 
+# Enable experimental features
+CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
+
 # Nuclear option - clear all settings on startup (uncomment if needed)
 # CONFIG_ZMK_SETTINGS_RESET_ON_START=y
