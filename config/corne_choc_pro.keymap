@@ -62,7 +62,6 @@
             bindings = <&kp LS(LC(C))>, <&kp LS(LC(V))>;
         };
 
-
         word_left: word_left_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "WORD_LEFT_TAP_DANCE";
@@ -105,6 +104,20 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+
+        screenshot_record: screenshot_record {
+            compatible = "zmk,behavior-tap-dance";
+            label = " SCREENSHOT/RECORD";
+            #binding-cells = <0>;
+            bindings = <&kp PRINTSCREEN>, <&kp LA(PRINTSCREEN)>;
+        };
+
+        play_pause_mute: play_pause_mute {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PLAY_PAUSE_MUTE";
+            #binding-cells = <0>;
+            bindings = <&kp K_MUTE>, <&kp C_PP>;
+        };
     };
 
     keymap {
@@ -120,10 +133,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB                            &kp Q            &kp W            &kp E              &kp R                   &kp T                         &kp C_MUTE   &kp C_PP           &kp Y                     &kp U                            &kp I               &kp O            &kp P                &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_SHIFT D  &hml LEFT_CONTROL F     &kp G                         &copy_paste  &copy_paste_shift  &kp H                     &hmr RIGHT_CONTROL J             &hmr RIGHT_SHIFT K  &hmr LEFT_ALT L  &hmr RIGHT_GUI SEMI  &kp SQT
-&kp LSHFT                          &kp Z            &kp X            &kp C              &kp V                   &kp B                                                         &kp N                     &kp M                            &kp COMMA           &kp DOT          &kp FSLH             &mo 4
-                                                                     &lt 1 SPACE        &thumb_mt LEFT_ALT TAB  &thumb_mt LEFT_CONTROL SPACE                                  &thumb_mt LEFT_GUI ENTER  &thumb_mt RIGHT_SHIFT BACKSPACE  &lt 2 DELETE
+&kp TAB                            &kp Q            &kp W            &kp E              &kp R                   &kp T                         &play_pause_mute  &screenshot_record  &kp Y                     &kp U                            &kp I               &kp O            &kp P                &kp BSPC
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_SHIFT D  &hml LEFT_CONTROL F     &kp G                         &copy_paste       &copy_paste_shift   &kp H                     &hmr RIGHT_CONTROL J             &hmr RIGHT_SHIFT K  &hmr LEFT_ALT L  &hmr RIGHT_GUI SEMI  &kp SQT
+&kp LSHFT                          &kp Z            &kp X            &kp C              &kp V                   &kp B                                                               &kp N                     &kp M                            &kp COMMA           &kp DOT          &kp FSLH             &mo 4
+                                                                     &lt 1 SPACE        &thumb_mt LEFT_ALT TAB  &thumb_mt LEFT_CONTROL SPACE                                        &thumb_mt LEFT_GUI ENTER  &thumb_mt RIGHT_SHIFT BACKSPACE  &lt 2 DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN &inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -139,9 +152,9 @@
             //                    | GUI |     | SPC  |        | ENT   |     | ALT |
 
             bindings = <
-&kp TAB                            &kp N1            &kp N2            &kp N3              &kp N4                &kp N5                  &kp LCTRL    &kp RCTRL          &kp N6          &kp N7                    &kp N8        &kp N9     &kp N0  &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &kp LEFT        &kp DOWN                  &kp UP        &kp RIGHT  &trans  &kp F11
-&kp LSHFT                          &kp F6            &kp F7            &kp F8              &kp F9                &kp F10                                                 &word_left      &word_down                &word_up      &word_right &trans  &kp F12
+&kp TAB                            &kp N1            &kp N2            &kp N3              &kp N4                &kp N5                  &kp LCTRL    &kp RCTRL          &kp N6          &kp N7                    &kp N8        &kp N9       &kp N0  &kp BSPC
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI F1  &hml LEFT_ALT F2  &hml LEFT_SHIFT F3  &hml LEFT_CONTROL F4  &kp F5                  &copy_paste  &copy_paste_shift  &kp LEFT        &kp DOWN                  &kp UP        &kp RIGHT    &trans  &kp F11
+&kp LSHFT                          &kp F6            &kp F7            &kp F8              &kp F9                &kp F10                                                 &word_left      &word_down                &word_up      &word_right  &trans  &kp F12
                                                                        &trans              &mt LEFT_ALT TAB      &mt LEFT_CONTROL SPACE                                  &mt LGUI ENTER  &mt LEFT_SHIFT BACKSPACE  &lt 3 DELETE
             >;
         };
@@ -156,10 +169,10 @@
             //                    | GUI |     | SPC |               | ENT |     | ALT |
 
             bindings = <
-&kp TAB                            &kp EXCL           &kp AT            &kp HASH           &kp DLLR               &kp PRCNT               &kp LCTRL  &kp RCTRL  &kp CARET           &kp AMPS                      &kp ASTRK           &kp LPAR         &kp RPAR            &kp BSPC
-&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI LBRC &hml LEFT_ALT LBKT &hml LEFT_SHIFT LPAR &hml LEFT_CONTROL LT   &kp MINUS               &kp LALT   &kp RALT   &kp EQUAL           &hmr RIGHT_CONTROL GT         &hmr RIGHT_SHIFT RPAR &hmr LEFT_ALT RBKT &hmr RIGHT_GUI RBRC &kp BSLH
-&kp LSHFT                          &kp GRAVE          &kp TILDE         &kp SQT            &kp DQT                &kp UNDER                                     &kp PLUS            &kp PIPE                      &kp SEMI            &kp COLON        &kp FSLH            &kp QMARK
-                                                                        &kp SPACE          &mt LEFT_ALT TAB       &mt LEFT_CONTROL SPACE                        &mt LEFT_GUI ENTER  &mt LEFT_SHIFT BACKSPACE      &trans
+&kp TAB                            &kp EXCL            &kp AT              &kp HASH              &kp DLLR              &kp PRCNT               &kp LCTRL  &kp RCTRL  &kp CARET           &kp AMPS                  &kp ASTRK              &kp LPAR            &kp RPAR             &kp BSPC
+&mt LA(LC(LG(LEFT_SHIFT))) ESCAPE  &hml LEFT_GUI LBRC  &hml LEFT_ALT LBKT  &hml LEFT_SHIFT LPAR  &hml LEFT_CONTROL LT  &kp MINUS               &kp LALT   &kp RALT   &kp EQUAL           &hmr RIGHT_CONTROL GT     &hmr RIGHT_SHIFT RPAR  &hmr LEFT_ALT RBKT  &hmr RIGHT_GUI RBRC  &kp BSLH
+&kp LSHFT                          &kp GRAVE           &kp TILDE           &kp SQT               &kp DQT               &kp UNDER                                     &kp PLUS            &kp PIPE                  &kp SEMI               &kp COLON           &kp FSLH             &kp QMARK
+                                                                           &kp SPACE             &mt LEFT_ALT TAB      &mt LEFT_CONTROL SPACE                        &mt LEFT_GUI ENTER  &mt LEFT_SHIFT BACKSPACE  &trans
             >;
         };
 
@@ -192,18 +205,18 @@
 
         vim_nav_layer {
             display-name = "VIM NAV";
-            
+
             // -----------------------------------------------------------------------------------------
             // | FIND | UNDO | CUT  | COPY |PASTE | REDO|       |       |  gg  |Ctrl+U|Ctrl+D|  G   | INS | DEL  |
             // | CTRL | GUI  | ALT  |SHIFT | CTRL | SEL |       |       |  b   |  h   |  j   |  k   |  l  |  w   |
             // | SHFT |S+UNDO|S+CUT |S+COPY|S+PAST|     |               |  ^   |  {   |  }   |  $   |  0  |  e   |
             //                      |      |      |     |               |      |      |      |
-            
+
             bindings = <
-&kp LC(F)    &kp LC(Z)     &kp LC(X)     &kp LC(C)      &kp LC(V)        &kp LC(Y)           &trans  &trans  &kp LC(HOME)     &kp LC(U)        &kp LC(D)        &kp LC(END)      &kp INS    &kp DEL
-&kp LCTRL    &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT &kp LEFT_CONTROL &kp LS(LC(A))       &trans  &trans  &kp LC(LEFT)     &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT  &kp LC(RIGHT)
-&kp LSHFT    &kp LS(LC(Z)) &kp LS(LC(X)) &kp LS(LC(C))  &kp LS(LC(V))    &trans                              &kp HOME         &kp LC(UP)       &kp LC(DOWN)     &kp END          &kp LC(A)  &kp LA(RIGHT)
-                                         &trans         &trans           &trans                              &trans           &trans           &trans
+&kp LC(F)  &kp LC(Z)      &kp LC(X)      &kp LC(C)       &kp LC(V)         &kp LC(Y)      &trans  &trans  &kp LC(HOME)  &kp LC(U)   &kp LC(D)     &kp LC(END)  &kp INS    &kp DEL
+&kp LCTRL  &kp LEFT_GUI   &kp LEFT_ALT   &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LS(LC(A))  &trans  &trans  &kp LC(LEFT)  &kp LEFT    &kp DOWN      &kp UP       &kp RIGHT  &kp LC(RIGHT)
+&kp LSHFT  &kp LS(LC(Z))  &kp LS(LC(X))  &kp LS(LC(C))   &kp LS(LC(V))     &trans                         &kp HOME      &kp LC(UP)  &kp LC(DOWN)  &kp END      &kp LC(A)  &kp LA(RIGHT)
+                                         &trans          &trans            &trans                         &trans        &trans      &trans
             >;
         };
 
